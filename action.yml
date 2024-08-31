@@ -1,0 +1,16 @@
+name: "sample"
+description: "Sample action"
+branding:
+  color: "blue"
+  icon: "box"
+inputs:
+  id_of_input:
+    description: "Description of input"
+    required: true
+    default: "default value"
+outputs:
+  id_of_output:
+    description: "Description of output"
+runs:
+  using: "node20"
+  main: "index.js"

@@ -1,0 +1,18 @@
+on:
+  push:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: test action
+        id: test
+        uses: ./
+        with:
+          id_of_input: 'input value'
+      - name: view result
+        run: |
+          echo ${{ env.id_of_output }}
+        env:
+          id_of_output: ${{ steps.test.outputs.id_of_output }}
